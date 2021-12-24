@@ -1,1 +1,31 @@
-<p>sign-in-form works!</p>
+<form class="p-3" [formGroup]="loginForm" (ngSubmit)="login()">
+
+  <div class="form-floating mb-4">
+    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+           formControlName="username"
+           [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+    <label for="floatingInput">
+      <img src="./assets/icons/username.png" alt="Username Icon">Username</label>
+    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+      <div *ngIf="f.username.errors.required">Username is required</div>
+    </div>
+  </div>
+
+  <div class="form-floating ">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+           formControlName="password"
+           [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+    <label for="floatingInput">
+      <img src="./assets/icons/key.png" alt="Username Icon">Password</label>
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+      <div *ngIf="f.password.errors.required">Password is required</div>
+    </div>
+  </div>
+
+  <div class="d-grid gap-2 pt-4">
+    <button class="btn btn-secondary" type="submit">Login</button>
+  </div>
+  <div class="pt-4 reset-password">
+    <a>Forgot Password?</a>
+  </div>
+</form>

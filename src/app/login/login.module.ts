@@ -11,6 +11,8 @@ import {SignInComponent} from './containers/sign-in/sign-in.component';
 import {SignUpComponent} from './containers/sign-up/sign-up.component';
 import {ForgotPasswordComponent} from './containers/forgot-password/forgot-password.component';
 import {ResetPasswordComponent} from './containers/reset-password/reset-password.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { TermsComponent } from './containers/terms/terms.component';
 
 
 @NgModule({
@@ -25,12 +27,14 @@ import {ResetPasswordComponent} from './containers/reset-password/reset-password
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    TermsComponent
   ],
-  imports: [
-    CommonModule,
-    LoginRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        LoginRoutingModule,
+        ReactiveFormsModule
+    ]
 })
 export class LoginModule {
 }
